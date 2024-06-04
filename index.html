@@ -8,45 +8,219 @@
 </head>
 <body>
     <main class="my-5"> 
-        <div class="container">
-            <h3 class="fs-1 fw-bold mb-5 text-center">Problemas con inicio del programa</h3>
+        <section style="margin-bottom: 150px;">
+            <div class="container">
+                <h3 class="fs-1 fw-bold mb-5 text-center" style="margin-bottom: 100px !important;">Modo de instalar correctamente el software</h3>
+                <p class="fs-5">Para que no exista ningún problema y todo funcione correctamente, debe realizar la instalación de los diferentes componentes de la siguiente manera:</p>
+                <ul class="fs-5 mb-5">
+                    <li>En primer lugar, instalar el software <a href="#sqlserver" class="text-dark fw-bold">“SQL Server Express”</a>.</li>
+                    <li>En segundo lugar, instalar el software <a href="#net" class="text-dark fw-bold">“.NET Desktop Runtime”</a>.</li>
+                    <li>En tercer lugar, <a href="#fecha" class="text-dark fw-bold">ajustar la fecha, horario y región</a>.</li> 
+                    <li>Por último, instalar el software <b>“TurnoWave”</b>.</li>  
+                </ul> 
 
-            <p class="fs-5 mb-5">Una de las causas de que no se inicie correctamente el programa es por un error en creación de la base de datos necesaria para almacenar los datos correspondientes.</p>
-
-            <p class="fs-5">Para corregir este problema debe hacer los siguientes pasos:</p>
-
-            <p class="fs-5">1°: Descargar el archivo sql que configura la base de datos. <a href="./download/script.sql">Descargar</a></p>
-
-            <p class="fs-5 mb-5">2°: Pulsar las teclas de Windows <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-windows" viewBox="0 0 16 16">
-                <path d="M6.555 1.375 0 2.237v5.45h6.555zM0 13.795l6.555.933V8.313H0zm7.278-5.4.026 6.378L16 16V8.395zM16 0 7.33 1.244v6.414H16z"/>
-              </svg></span> + R de su teclado, al mismo tiempo. Esto le abrirá una ventana de "Ejecutar", donde debe escribir la palabra "cmd" y presionar el botón "Aceptar".</p>
-
-            <div class="container mb-5 text-center">  
-                <img src="./img/img1.png" class="img-fluid border border-2" alt="imagen de ventana ejecutar">
+                <p class="fs-5">En caso de tener problemas:</p>
+                <ul class="fs-5">
+                    <li>Solucionar problemas con <a href="#basedatos" class="text-dark fw-bold">Base de datos</a>.</li> 
+                    <li>Solucionar problemas con <a href="#antivirus" class="text-dark fw-bold">Antivirus de Windows</a>.</li> 
+                </ul>
             </div>
+        </section>
+        <section>
+            <div class="container" id="sqlserver">
+                <h3 class="fs-1 fw-bold mb-5 text-center" style="margin-bottom: 100px !important;">Instalación de SQL Server Express</h3>
+                <p class="fs-5">SQL Server es un sistema de gestión de bases de datos relacionales (RDBMS) desarrollado por Microsoft. Permite almacenar y recuperar datos según lo solicitado por otras aplicaciones de software, ya sea en la misma computadora o a través de una red. Este software se utilizará para crear y/o administrar la base de datos necesaria para almacenar los turnos y los datos que tiene aparejados. 
+                </p>
 
-            <p class="fs-5 mb-5">3°: Debería aparecer la siguiente ventana.</p> 
-            
-            <div class="container mb-5"> 
-                <img src="./img/img2.png" class="img-fluid" alt="imagen de ventana de simbolo de sistema">
-            </div>
-
-            <p class="fs-5 mb-5">4°: En esta ventana de "Simbolo del sistema", debe escribir el comando "sqlcmd -S localhost -E -Q "SELECT name FROM sys.databases", sin las comillas. Esto le permitirá verificar si existe la base de datos necesaria, la cual se llama "GestionTurnos".</p>  
-
-            <div class="container mb-5">
-                <img src="./img/img3.png" class="img-fluid" alt="imagen de ventana de simbolo de sistema">
-            </div>
-
-            <p class="fs-5 mb-5">5°: Por último, si no existe la base de datos, debe escribir el comando "sqlcmd -S localhost -E -i C:\Users\NombreDelUsuario\Downloads\script.sql", sin las comillas.</p>
+                <p class="fs-5 mb-5">En caso de usar un Sistema Operativo Windows 10 o posterior, deberá descargar la última versión disponible (2022): <a href="https://www.microsoft.com/es-es/sql-server/sql-server-downloads" target="_blank">Descargar</a></p> 
  
-            <div class="container mb-5">
-                <img src="./img/img4.png" class="img-fluid" alt="imagen de ventana de simbolo de sistema">
-            </div>
-              
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/sqlexpress.png" alt="">
+                    <p class="fs-5 fw-bold">El instalador en el sitio web.</p> 
+                </div>
+                    
+                
+                <p class="fs-5 mb-5" style="margin-top: 150px;">Una vez descargado el instalador correspondiente, debe buscarlo en la carpeta donde se guardan las descargas para luego ejecutarlo. Luego de ejecutar el archivo, ósea hacer doble click sobre este, observará una ventana donde deberá pulsar la opción “Sí”.</p>
 
-            <p class="fs-5">Luego de seguir los pasos anteriores, si el resultado de la operación es igual al mostrado en la imagen anterior entonces la base de datos se creó de manera correcta.</p>
-            <p class="fs-5">Intente abrir el programa y verifique su correcto funcionamiento.</p>
-          </div>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/sqlexpressInst.png" alt="">
+                    <p class="fs-5 fw-bold">El instalador descargado.</p> 
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">Le aparecerá esta ventana, que dará comienzo al proceso de instalación, aquí deberá seleccionar la opción “Personalizado”: </p>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/sqlserver1.png" alt=""> 
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">En esta ventana tendrá que cambiar la <b>“UBICACIÓN DE LOS MEDIOS”</b>, por defecto está establecido como <b>“C:\SQL2022”</b> pero debe cambiarlo a <b>“C:\Program Files\Microsoft SQL Server”</b>, luego de hacer este cambio debe que presionar el botón <b>“Instalar”</b>, el cual dará comienzo a la descarga de los archivos necesarios para la instalación.</p>
+                <div class="container mb-5 text-center">
+                    <img class="img-fluid me-md-5 me-0 mb-5 mb-md-0" src="./img/sqlserver2.png" alt=""> 
+                    <img class="img-fluid" src="./img/sqlserver3.png" alt="">  
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">Finalizada la descarga de los paquetes de instalación, aparecerá la siguiente ventana donde debe seleccionar la primer opción, osea, <b>“New SQL Server standalone installation on add features to an existing installation”</b>.</p>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/sqlserver4.png" alt=""> 
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">En esta primera ventana donde comenzará a instalarse el software, simplemente tendrá que pulsar el botón <b>“Next”</b>.</p>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/sqlserver5.png" alt=""> 
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">En el apartado <b>“License Terms”</b>, tendrá que aceptar los términos de la licencia, pulsando sobre <b>“I accept the license terms and”</b> y luego sobre el botón <b>“Next”</b>.</p>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/sqlserver6.png" alt=""> 
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">En el apartado <b>“Azure Extension for SQL Server”</b>, tendrá que <b>quitar el “check”</b> que viene por defecto sobre <b>“Azure Extension for SQL Server”</b> que contiene una leyenda a su derecha, ya que no es necesario y luego sobre el botón <b>“Next”</b>.</p>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/sqlserver7.png" alt=""> 
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">En el apartado <b>“Feature Selection”</b>, tendrá hacer click sobre la opción <b>“LocalDB”</b>, en caso de no estar seleccionada, luego el botón <b>“Next”</b> para continuar.</p>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/sqlserver8.png" alt=""> 
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">En el apartado <b>“Instance Configuration”</b>, tendrá que elegir la opción <b>“Default instance”</b> y luego hacer click sobre el botón <b>“Next”</b>.</p>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/sqlserver9.png" alt=""> 
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">En el apartado <b>“Server Configuration”</b>, solamente tendrá hacer click sobre el botón <b>“Next”</b>.</p>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/sqlserver10.png" alt=""> 
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">En el apartado <b>“Database Engine Configuration”</b>, tendrá que elegir la opción <b>“Windows authentication mode”</b> y luego hacer click sobre el botón <b>“Next”</b>.</p>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/sqlserver11.png" alt=""> 
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">Por último, en el apartado <b>“Installation Progress”</b>, simplemente debe esperar a que se concrete la instalación.</p>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid me-0 me-md-5 mb-5 mb-md-0" src="./img/sqlserver12.png" alt=""> 
+                    <img class="img-fluid" src="./img/sqlserver13.png" alt="">  
+                </div>
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">Una vez se haya concretado la instalación simplemente debe cerrar la ventana pulsando sobre el botón <b>“Close”</b>. De igual manera, la ventana denominada <b>“SQL Server Installation Center”</b>, en caso de estar abierta.</p>
+                <div class="container text-center">  
+                    <img class="img-fluid me-5" src="./img/sqlserver14.png" alt="">  
+                </div>
+            </div>
+        </section>
+        <section style="margin-top: 200px;">
+            <div class="container" id="net"> 
+                <h3 class="fs-1 fw-bold mb-5 text-center" style="margin-bottom: 100px !important;">Instalación de software “.NET Desktop Runtime”</h3>
+    
+                <p class="fs-5 mb-5">Debe descargar el software desde la página web oficial de Microsoft: <a href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.30-windows-x64-installer" target="_blank">Descargar</a></p>
+
+                <p class="fs-5">Luego debe buscar el instalador en la carpeta donde se guardan las descargas para ejecutarlo, ósea hacer doble click sobre este, observará una ventana donde deberá pulsar la opción <b>“Sí”</b>.</p>
+
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/net.png" alt="">
+                    <p class="fs-5 fw-bold">El instalador es este.</p>
+                </div>
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">Se abrirá la siguiente ventana, donde comenzará el proceso de instalación. Solamente tendrá que hacer click sobre <b>“Install”</b> para comenzar la instalación.</p>
+                <div class="container mb-5 text-center">  
+                    <img class="img-fluid" src="./img/net1.png" alt="">
+                </div>
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">Luego de concertar el paso anterior, le mostrará la ventana <b>“Setup Progress”</b>, donde se instalará el mismo, y por último se mostrará la ventana <b>“Installation was successful”</b> que indicará el fin del proceso de instalación.</p>
+
+                <div class="d-flex flex-wrap flex-md-nowrap m-0 p-0">
+                    <div class="container mb-5 text-center">  
+                        <img class="img-fluid" src="./img/net2.png" alt="">
+                    </div>
+                    <div class="container mb-5 text-center">  
+                        <img class="img-fluid" src="./img/net3.png" alt="">
+                    </div>
+                </div>  
+            </div>
+        </section>
+        <section style="margin-top: 200px; margin-bottom: 200px !important;">
+            <div class="container" id="basedatos">
+                <h3 class="fs-1 fw-bold mb-5 text-center" style="margin-bottom: 100px !important;">Base de datos</h3>
+    
+                <p class="fs-5 mb-5">Una de las causas de que no se inicie correctamente el programa es por un error en creación de la base de datos necesaria para almacenar los datos correspondientes.</p>
+    
+                <p class="fs-5">Para corregir este problema debe hacer los siguientes pasos:</p>
+    
+                <p class="fs-5">1°: Descargar el archivo sql que configura la base de datos. <a href="./download/script.sql">Descargar</a></p>
+    
+                <p class="fs-5 mb-5">2°: Pulsar las teclas de Windows <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-windows" viewBox="0 0 16 16">
+                    <path d="M6.555 1.375 0 2.237v5.45h6.555zM0 13.795l6.555.933V8.313H0zm7.278-5.4.026 6.378L16 16V8.395zM16 0 7.33 1.244v6.414H16z"/>
+                  </svg></span> + R de su teclado, al mismo tiempo. Esto le abrirá una ventana de <b>"Ejecutar"</b>, donde debe escribir la palabra <b>"cmd"</b> y presionar el botón <b>"Aceptar"</b>.</p>
+    
+                <div class="container mb-5 text-center">  
+                    <img src="./img/img1.png" class="img-fluid border border-2" alt="imagen de ventana ejecutar">
+                </div>
+    
+                <p class="fs-5 mb-5">3°: Debería aparecer la siguiente ventana.</p> 
+                
+                <div class="container mb-5"> 
+                    <img src="./img/img2.png" class="img-fluid" alt="imagen de ventana de simbolo de sistema">
+                </div>
+    
+                <p class="fs-5 mb-5">4°: En esta ventana de <b></b>"Simbolo del sistema", debe escribir el comando <b>sqlcmd -S localhost -E -Q "SELECT name FROM sys.databases"</b> y luego para que se ejecute debe pulsar <b>"Enter"</b>.</p>
+                <p class="fs-5 mb-5">Esto le permitirá verificar si existe la base de datos necesaria, la cual se llama <b>"GestionTurnos"</b>.</p>  
+    
+                <div class="container mb-5">
+                    <img src="./img/img3.png" class="img-fluid" alt="imagen de ventana de simbolo de sistema">
+                </div>
+    
+                <p class="fs-5 mb-5">5°: Por último, si no existe la base de datos, debe escribir el comando <b>sqlcmd -S localhost -E -i C:\Users\NombreDelUsuario\Downloads\script.sql</b> y luego para que se ejecute debe pulsar <b>"Enter"</b>.</p>
+     
+                <div class="container mb-5">
+                    <img src="./img/img4.png" class="img-fluid" alt="imagen de ventana de simbolo de sistema">
+                </div> 
+    
+                <p class="fs-5">Luego de seguir los pasos anteriores, si el resultado de la operación es igual al mostrado en la imagen anterior entonces la base de datos se creó de manera correcta.</p>
+                <p class="fs-5">Intente abrir el programa y verifique su correcto funcionamiento.</p>
+              </div> 
+        </section>
+        <section>
+            <div class="container" id="antivirus">
+                <h3 class="fs-1 fw-bold mb-5 text-center" style="margin-bottom: 100px !important;">Antivirus de Windows</h3>
+
+                <p class="fs-5 mb-5">En caso de experimentar este tipo de problemas, debe actuar de la siguiente manera:</p>
+                <p class="fs-5 mb-5">Al ejecutar el instalador denominado <b>“TurnoWaveSetup-x64”</b>, puede que le aparezca esta ventana, usted debe pulsar sobre el enlace <b>“Más información”</b>.</p>
+                <div class="container text-center mb-5">
+                    <img src="./img/windows1.png" class="img-fluid" alt="imagen de ventana de Antivirus de Windows">
+                </div> 
+
+                <p class="fs-5 mb-5" style="margin-top: 100px;">Luego de hacer lo antes indicado, observará más información sobre el instalador como el nombre de la aplicación y del editor, acompañado de un segundo botón para seleccionar. Para comenzar el proceso de instalación debe pulsar sobre el botón <b>“Ejecutar de todas formas”</b>.</p>
+                <div class="container text-center mb-5">
+                    <img src="./img/windows2.png" class="img-fluid" alt="imagen de ventana de Antivirus de Windows">
+                </div>
+            </div> 
+        </section>
+        
+        <section style="margin-top: 200px;">
+            <div class="container" id="fecha">
+                <h3 class="fs-1 fw-bold mb-5 text-center" style="margin-bottom: 100px !important;">Ajustar fecha y hora de Windows</h3>
+                <p class="fs-5">Para no tener problemas de este tipo, debe configurar la fecha y horario: </p>
+
+                <p class="fs-5 mb-5">1°: Diríjase al margen inferior derecho de la pantalla, donde encontrará el horario y la fecha, aquí debe posicionarse sobre este y hacer click derecho sobre el mismo. Aparecerán opciones, debe elegir <b>“Ajustar fecha y hora”</b>.</p>
+                <div class="d-flex container text-center justify-content-center align-items-start flex-wrap">
+                    <img src="./img/hora1.png" class="img-fluid " alt="imagen de sección horario">
+                    <img src="./img/hora2.png" class="img-fluid" alt="imagen de sección horario"> 
+                </div>
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">2°:	En esta ventana llamada <b>“Fecha y hora”</b>, debe ir hacia abajo, donde encontrará el apartado <b>“Configuración relacionada”</b>. Debe seleccionar <b>“Fecha, hora y formato regional”</b>.</p>
+                <div class="container text-center mb-5">
+                    <img src="./img/hora3.png" class="img-fluid" alt="imagen de sección horario"> 
+                </div>
+
+                <p class="fs-5 mb-5" style="margin-top: 150px;">3°:	En esta ventana llamada <b>“Región”</b>, debe cambiar tanto <b>“País o región” </b>como <b>“Formato actual”</b> por <b>“Argentina”</b> y <b>“Español (Argentina)”</b> respectivamente.</p>
+                <div class="container text-center mb-5">
+                    <img src="./img/hora4.png" class="img-fluid me-0 me-md-5 mb-md-0 mb-5" alt="imagen de sección horario"> 
+                    <img src="./img/hora5.png" class="img-fluid" alt="imagen de sección horario">  
+                </div>
+            </div>
+        </section> 
     </main>
 </body>
 </html>
